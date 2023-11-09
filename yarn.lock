@@ -237,10 +237,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.2.0.tgz#2cbcf822bf3764c9658c4d2e568bd0c0cb748016"
   integrity sha512-+OJ9konv95ClSTOJCmMZqpd5+YGsB2S+x6w3E1oaM8UuR5j8nTNHYSz8c9BEPGDOCMQYIEEGlVPj/VY64iTbGw==
 
-"@distributedlab/tools@^0.2.0-rc.10":
-  version "0.2.0-rc.19"
-  resolved "https://registry.yarnpkg.com/@distributedlab/tools/-/tools-0.2.0-rc.19.tgz#ccbf2f5c63b3be19945bf340a76dc881ba0c263d"
-  integrity sha512-BA2Yl/I/itzSBKlRvlwin4cs0deq7Qo1qnAjfe7gvqqaFMj9P4aHW4Qy5KzTNzk7s3JSqOWj4bNa+KVdXIYwgw==
+"@distributedlab/tools@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/@distributedlab/tools/-/tools-1.0.0-rc.8.tgz#945400580ad0e8e05e8a1abfd1bd296f4a58dfa6"
+  integrity sha512-4AZ94bzezPKfC7wXLhk39JUWb1Zhitonv59AYRQbORxRHoSocYzmM3SeLU7gaNDz5hpJSGHtGw0d/JsmHZmhiw==
   dependencies:
     bignumber.js "^9.1.1"
     dayjs "^1.11.7"

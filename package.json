@@ -1,7 +1,18 @@
 {
   "name": "rarime-dashboard",
+  "description": "Dashboard for view credentials",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Zero Block Global Foundation",
+  "keywords": [
+    "rarime"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rarimo/rarime-dashboard.git"
+  },
+
   "gitHooks": {
     "pre-commit": "tsc && yarn lint",
     "pre-push": "yarn rsc"
@@ -19,7 +30,7 @@
     "rsc": "node scripts/release-sanity-check.mjs"
   },
   "dependencies": {
-    "@distributedlab/tools": "^0.2.0-rc.10",
+    "@distributedlab/tools": "^1.0.0-rc.8",
     "downshift": "^7.1.2",
     "framer-motion": "^10.12.10",
     "i18next": "^22.4.9",

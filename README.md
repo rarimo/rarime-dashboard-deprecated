@@ -68,5 +68,3 @@ This project is under the MIT License — see the [LICENSE](./LICENSE) file for 
 [Download Here]: https://nodejs.org/en/download/
 
 [Instructions to Download]: https://www.typescriptlang.org/download
-
-["build a custom action"]: https://dev.collab.land/docs/upstream-integrations/build-a-custom-action
