@@ -1,49 +1,70 @@
-# Rarime Dashboard
+<div align="center"><h1><b>Rarime Dashboard</b></h1></div>
 
-## Project setup
-```
-yarn | yarn install
-```
+This repository implements an application for view your credentials after receiving them in a [Rarimo Proof of Humanity] case.
 
-### Compiles and hot-reloads for development
-```
-yarn start
-```
+## Getting Started
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Pre-requisites
 
-### Lints and fixes files
-```
-yarn lint
-```
+#### Environment:
 
-### Lints release/release candidate version
-```
-yarn rsc %release-version%
-```
+- Node.JS 18.14.0 [**[Download Here]**]
+- Typescript 4.9 [**[Instructions to Download]**]
 
-### Build docker image with version
-```
- docker build --no-cache --progress=plain --build-arg BUILD_VERSION=1.0.0-rc.0 -t react-template .
-```
+## Setup
 
-## Some additional features
+### Starting the server:
 
-### JsonApi lib
+- Clone the repository to your machine
+- Open the folder in a code editor of your choice
+- Install dependencies:
+  ```bash
+  yarn install
+  ```
+- Build the project:
+  ```bash
+  yarn run build
+  ```
+- Start the server (The server starts in port `5173` by default):
+  ```bash
+  yarn start
+  ```
+- If the server fails due to the port being occupied, start the server in a different port:
+  ```bash
+  PORT=5000 yarn start
+  ```
 
-[@distributedlab/jac](https://distributed-lab.github.io/web-kit/modules/_distributedlab_jac.html)
+## Contributing
 
-### Web3 provider wrapper lib
+We welcome contributions from the community! To contribute to this project, follow these steps:
 
-[@distributedlab/w3p](https://distributed-lab.github.io/web-kit/modules/_distributedlab_w3p.html)
+1. Fork the repository.
+1. Create a new branch with a descriptive name for your feature or bug fix.
+1. Make your changes and commit them.
+1. Push your changes to your branch on your GitHub fork.
+1. Create a pull request from your branch to the `main` branch of this repository.
 
-### Utils, tools, helpers, ...etc
+Please ensure your pull request adheres to the following guidelines:
+Add a clear pull request title;
+Add a comprehensive pull request description that includes the motivation behind the changes, steps needed to test them, etc;
+Update the CHANGELOG.md accordingly;
+Keep the codebase clean and well-documented;
+Make sure your code is properly tested;
+Reference any related issues in your pull request;
 
-[@distributedlab/tools](https://distributed-lab.github.io/web-kit/modules/_distributedlab_tools.html)
+The maintainers will review your pull request and may request changes or provide feedback before merging. We appreciate your contributions!
 
+
+## Changelog
+
+For the changelog, see [CHANGELOG.md](./CHANGELOG.md).
+  
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details
+This project is under the MIT License — see the [LICENSE](./LICENSE) file for details.
+
+[Rarimo Proof of Humanity]: https://docs.rarimo.com/use-cases/proof-of-humanity
+
+[Download Here]: https://nodejs.org/en/download/
+
+[Instructions to Download]: https://www.typescriptlang.org/download
