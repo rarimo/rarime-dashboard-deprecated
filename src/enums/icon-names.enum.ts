@@ -1,4 +1,5 @@
 export enum ICON_NAMES {
+  accountBalanceWallet = 'account-balance-wallet',
   adjustments = 'adjustments',
   annotation = 'annotation',
   archive = 'archive',
@@ -6,6 +7,7 @@ export enum ICON_NAMES {
   ban = 'ban',
   beaker = 'beaker',
   bell = 'bell',
+  bolt = 'bolt',
   bookmark = 'bookmark',
   briefcase = 'briefcase',
   cake = 'cake',
