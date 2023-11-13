@@ -10,13 +10,9 @@
   --black: #{$black};
   --black-rgb: #{$black-rgb};
 
-  --background-primary-light: #{$background-primary-light};
-  --background-primary-main: #{$background-primary-main};
-  --background-primary-dark: #{$background-primary-dark};
+  --active-icon-primary: #{$active-icon-primary};
 
-  --background-secondary-light: #{$background-secondary-light};
   --background-secondary-main: #{$background-secondary-main};
-  --background-secondary-dark: #{$background-secondary-dark};
 
   /* status colors */
   --success-light: #{$success-light};
@@ -76,12 +72,12 @@
   /* App variables */
   --app-txt: #{$text-primary-main};
   --app-font-family: 'Roboto', 'Arial', sans-serif;
-  --app-padding-right: #{toRem(64)};
-  --app-padding-left: #{toRem(64)};
+  --app-padding-right: #{toRem(16)};
+  --app-padding-left: #{toRem(16)};
 
   @include respond-to(xmedium) {
-    --app-padding-right: #{toRem(32)};
-    --app-padding-left: #{toRem(32)};
+    --app-padding-right: #{toRem(16)};
+    --app-padding-left: #{toRem(16)};
   }
 
   @include respond-to(small) {

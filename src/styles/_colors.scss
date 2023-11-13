@@ -3,13 +3,8 @@ $white-rgb: hexToRGB($white);
 $black: #000000;
 $black-rgb: hexToRGB($black);
 
-$background-primary-light: #ffffff;
-$background-primary-main: #fbfcff;
-$background-primary-dark: #f5f6ff;
-
-$background-secondary-light: #eff2ff;
-$background-secondary-main: #dfe5f8;
-$background-secondary-dark: #cad4f5;
+$background-secondary-main: #E0E1F8;
+$active-icon-primary: #3044FE;
 
 /* status colors */
 
@@ -70,3 +65,4 @@ $border-primary-dark: #45484f;
 $border-secondary-light: #e0e0ec;
 $border-secondary-main: #c4c4d0;
 $border-secondary-dark: #a9abb4;
+
