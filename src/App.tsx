@@ -14,11 +14,8 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
 
   const { showToast } = useNotification()
   const { provider, init: initWeb3 } = useWeb3Context()
-  const {
-    checkMetamaskExists,
-    checkSnapExists,
-    connectOrInstallSnap,
-  } = useMetamaskZkpSnapContext()
+  const { checkMetamaskExists, checkSnapExists, connectOrInstallSnap } =
+    useMetamaskZkpSnapContext()
 
   const init = useCallback(async () => {
     if (provider?.address) return
@@ -72,10 +69,6 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
       bus.off(BUS_EVENTS.warning, showWarningToast)
       bus.off(BUS_EVENTS.error, showErrorToast)
       bus.off(BUS_EVENTS.info, showInfoToast)
-
-      mountingInit = async () => {
-        /* empty */
-      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
