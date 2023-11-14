@@ -12,7 +12,6 @@
     "type": "git",
     "url": "https://github.com/rarimo/rarime-dashboard.git"
   },
-
   "gitHooks": {
     "pre-commit": "tsc && yarn lint",
     "pre-push": "yarn rsc"
@@ -31,6 +30,8 @@
   },
   "dependencies": {
     "@distributedlab/tools": "^1.0.0-rc.8",
+    "@distributedlab/w3p": "^1.0.0-rc.8",
+    "@rarimo/rarime-connector": "^0.8.0",
     "downshift": "^7.1.2",
     "framer-motion": "^10.12.10",
     "i18next": "^22.4.9",
