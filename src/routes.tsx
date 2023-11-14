@@ -8,6 +8,8 @@ import {
 } from 'react-router-dom'
 
 import { App } from '@/App'
+import { Web3ProviderContextProvider } from '@/contexts'
+import MetamaskZkpSnapContextProvider from '@/contexts/MetamaskZkpSnapContext'
 import { RoutesPaths } from '@/enums'
 
 export const AppRoutes = () => {
@@ -18,11 +20,15 @@ export const AppRoutes = () => {
       path: '/',
       element: (
         <Suspense fallback={<></>}>
-          <App>
-            <AnimatePresence>
-              <Outlet />
-            </AnimatePresence>
-          </App>
+          <Web3ProviderContextProvider>
+            <MetamaskZkpSnapContextProvider>
+              <App>
+                <AnimatePresence>
+                  <Outlet />
+                </AnimatePresence>
+              </App>
+            </MetamaskZkpSnapContextProvider>
+          </Web3ProviderContextProvider>
         </Suspense>
       ),
       children: [
