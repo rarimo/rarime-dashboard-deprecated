@@ -6,6 +6,8 @@ import { ICON_NAMES } from '@/enums'
 
 interface IconProps extends HTMLAttributes<HTMLOrSVGElement> {
   name: ICON_NAMES
+  width?: string | number
+  height?: string | number
 }
 
 const Icon: FC<IconProps> = ({ name, className = '', ...rest }) => {

@@ -10,6 +10,7 @@
   background: var(--background-secondary-main);
   position: absolute;
   left: 0;
+  width: calc(var(--app-sidebar-width) + var(--app-padding-left) + (var(--app-padding-right)));
 
   @include respond-to(tablet) {
     flex-wrap: wrap;

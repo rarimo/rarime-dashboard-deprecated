@@ -9,10 +9,13 @@
   --white-rgb: #{$white-rgb};
   --black: #{$black};
   --black-rgb: #{$black-rgb};
+  --transparent-rgba: #{$transparent-rgba};
 
   --active-icon-primary: #{$active-icon-primary};
 
   --background-secondary-main: #{$background-secondary-main};
+  --background-secondary-dark: #{$background-secondary-dark};
+
 
   /* status colors */
   --success-light: #{$success-light};
@@ -44,6 +47,10 @@
   --secondary-dark: #{$secondary-dark};
 
   /* typography colors */
+  --text-icon-primary: #{$text-icon-primary};
+  --text-icon-secondary: #{$text-icon-secondary};
+  --fill-icon-primary: #{$fill-icon-primary};
+
   --text-primary-light: #{$text-primary-light};
   --text-primary-main: #{$text-primary-main};
   --text-primary-dark: #{$text-primary-dark};
@@ -71,9 +78,13 @@
 
   /* App variables */
   --app-txt: #{$text-primary-main};
-  --app-font-family: 'Roboto', 'Arial', sans-serif;
+  --app-font-family: 'Euclid Circular B', 'Roboto', 'Arial', sans-serif;
+
   --app-padding-right: #{toRem(16)};
   --app-padding-left: #{toRem(16)};
+  --app-sidebar-width: #{toRem(48)};
+  --app-primary-page-padding: #{toRem(20)};
+
 
   @include respond-to(xmedium) {
     --app-padding-right: #{toRem(16)};

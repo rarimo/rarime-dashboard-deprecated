@@ -13,7 +13,7 @@ import MetamaskZkpSnapContextProvider from '@/contexts/MetamaskZkpSnapContext'
 import { RoutesPaths } from '@/enums'
 
 export const AppRoutes = () => {
-  const MainPage = lazy(() => import('@/pages/MainPage'))
+  const ProfilePage = lazy(() => import('@/pages/ProfilePage/ProfilePage'))
 
   const router = createBrowserRouter([
     {
@@ -35,7 +35,7 @@ export const AppRoutes = () => {
         {
           index: true,
           path: RoutesPaths.App,
-          element: <MainPage />,
+          element: <ProfilePage />,
         },
         {
           path: '/',

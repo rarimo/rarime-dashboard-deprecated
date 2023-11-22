@@ -14,11 +14,8 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
 
   const { showToast } = useNotification()
   const { provider, init: initWeb3 } = useWeb3Context()
-  const {
-    checkMetamaskExists,
-    checkSnapExists,
-    connectOrInstallSnap,
-  } = useMetamaskZkpSnapContext()
+  const { checkMetamaskExists, checkSnapExists, connectOrInstallSnap } =
+    useMetamaskZkpSnapContext()
 
   const init = useCallback(async () => {
     if (provider?.address) return
