@@ -5,18 +5,16 @@ import { useCallback, useEffect, useState } from 'react'
 
 import { AppButton, Icon } from '@/common'
 import { useMetamaskZkpSnapContext } from '@/contexts'
-import { ICON_NAMES } from '@/enums'
-import CredentialsTile from '@/pages/ProfilePage/components/CredentialsTile'
-import Sidebar from '@/pages/ProfilePage/components/Sidebar'
+import { IconNames } from '@/enums'
+
+import { CredentialsTile, Sidebar } from './components'
 
 const ProfilePage = () => {
   const [credentials, setCredentials] = useState([] as W3CCredential[])
   const { getCredentials } = useMetamaskZkpSnapContext()
 
   const getUserCredentials = useCallback(async () => {
-    const userCredentials = await getCredentials()
-
-    setCredentials(userCredentials)
+    setCredentials(await getCredentials())
   }, [getCredentials])
 
   useEffect(() => {
@@ -39,29 +37,29 @@ const ProfilePage = () => {
               <h2 className='profile-page__content-title'>{'Profile #1'}</h2>
               {Boolean(credentials.length) && (
                 <div className='profile-page__content-actions'>
-                  <div className='profile-page__content-actions_wallets'>
+                  <div className='profile-page__content-actions-wallets'>
                     <span>{'Wallet'}</span>
                     <AppButton
                       scheme='none'
                       text={'All'}
-                      iconRight={ICON_NAMES.expandMore}
+                      iconRight={IconNames.expandMore}
                     />
                   </div>
-                  <div className='profile-page__content-actions_filter'>
+                  <div className='profile-page__content-actions-filter'>
                     <span>{'Filter'}</span>
                     <AppButton
                       scheme='none'
                       text={'All'}
-                      iconRight={ICON_NAMES.expandMore}
+                      iconRight={IconNames.expandMore}
                     />
                   </div>
                   <AppButton
-                    className='profile-page__content-actions_add'
+                    className='profile-page__content-actions-add'
                     text={'New'}
                     scheme='filled'
                     size='small'
                     modification='border-circle'
-                    iconLeft={ICON_NAMES.plus}
+                    iconLeft={IconNames.plus}
                   />
                 </div>
               )}
@@ -77,18 +75,18 @@ const ProfilePage = () => {
                 <Icon
                   width={88}
                   height={88}
-                  className='profile-page__content-empty_icon'
-                  name={ICON_NAMES.plusInCircle}
+                  className='profile-page__content-empty-icon'
+                  name={IconNames.plusInCircle}
                 />
-                <span className='profile-page__content-empty_title'>
+                <span className='profile-page__content-empty-title'>
                   {'Add Credentials'}
                 </span>
-                <p className='profile-page__content-empty_description'>
+                <p className='profile-page__content-empty-description'>
                   {'Explore credentials marketplace with different providers '}
                 </p>
                 <AppButton
-                  className='profile-page__content-empty_button'
-                  iconLeft={ICON_NAMES.plus}
+                  className='profile-page__content-empty-button'
+                  iconLeft={IconNames.plus}
                   text={'New Proof'}
                   size='large'
                   modification='border-circle'

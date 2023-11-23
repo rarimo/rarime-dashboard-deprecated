@@ -1,4 +1,4 @@
-export enum ICON_NAMES {
+export enum IconNames {
   accountBalanceWallet = 'account-balance-wallet',
   adjustments = 'adjustments',
   annotation = 'annotation',

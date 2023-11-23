@@ -3,18 +3,18 @@ import './styles.scss'
 import { FC, HTMLAttributes } from 'react'
 
 import { Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   title?: string
   message: string
-  iconName?: ICON_NAMES
+  iconName?: IconNames
 }
 
 const ErrorMessage: FC<Props> = ({
   title,
   message,
-  iconName = ICON_NAMES.exclamationCircle,
+  iconName = IconNames.exclamationCircle,
   className = '',
   ...rest
 }) => {

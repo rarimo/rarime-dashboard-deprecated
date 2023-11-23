@@ -1,4 +1,4 @@
-export enum WINDOW_BREAKPOINTS {
+export enum WindowBreakpoints {
   xSmall = 480,
   small = 600,
   tablet = 868,

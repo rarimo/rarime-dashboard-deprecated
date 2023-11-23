@@ -4,7 +4,8 @@ import { W3CCredential } from '@rarimo/rarime-connector'
 import { FC, HTMLAttributes } from 'react'
 
 import { Icon } from '@/common'
-import { CREDENTIALS_NAMES, ICON_NAMES } from '@/enums'
+import { CredentialsNames, IconNames } from '@/enums'
+import {CredentialsNamesType, IconNamesType} from '@/types'
 
 type Props = {
   credential: W3CCredential
@@ -18,13 +19,13 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
           className='credential-tile__content-icon'
           width='40'
           height='40'
-          name={ICON_NAMES.proof}
+          name={IconNames.proof}
         />
         <h3 className='credential-tile__content-title'>
-          {CREDENTIALS_NAMES[
+          {CredentialsNames[
             String(
               credential.credentialSubject.type,
-            ) as keyof typeof CREDENTIALS_NAMES
+            ) as CredentialsNamesType
           ] ?? credential.credentialSubject.type}
         </h3>
         {/*Todo: add subtitle*/}
@@ -36,10 +37,10 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
             <Icon
               width={16}
               height={16}
-              name={ICON_NAMES.calendar}
+              name={IconNames.calendar}
               className='credential-tile__footer-icon'
             />
-            <p className='credential-tile__footer-date_text'>
+            <p className='credential-tile__footer-date-text'>
               {'Exp:' + ' ' + credential.expirationDate}
             </p>
           </div>
@@ -48,16 +49,14 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
           <Icon
             width={16}
             height={16}
-            className='credential-tile__footer-provider_icon'
+            className='credential-tile__footer-provider-icon'
             name={
-              ICON_NAMES[
-                String(
-                  credential.credentialSubject.provider,
-                ) as keyof typeof ICON_NAMES
+              IconNames[
+                String(credential.credentialSubject.provider) as IconNamesType
               ]
             }
           />
-          <p className='credential-tile__footer-provider_name'>
+          <p className='credential-tile__footer-provider-name'>
             {String(credential.credentialSubject.provider)}
           </p>
         </div>

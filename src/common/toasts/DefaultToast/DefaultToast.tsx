@@ -4,19 +4,16 @@ import './styles.scss'
 import { FC, HTMLAttributes, useMemo } from 'react'
 
 import { Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   title?: string
   message: string
-  iconName?: ICON_NAMES
+  iconName?: IconNames
 }
 
 const DefaultToast: FC<Props> = ({ title, message, iconName, ...rest }) => {
-  const toastIcon = useMemo(
-    () => iconName || ICON_NAMES.checkCircle,
-    [iconName],
-  )
+  const toastIcon = useMemo(() => iconName || IconNames.checkCircle, [iconName])
 
   return (
     <div className='default-toast__body' {...rest}>

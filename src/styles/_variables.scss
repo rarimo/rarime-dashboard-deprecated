@@ -15,7 +15,7 @@
 
   --background-secondary-main: #{$background-secondary-main};
   --background-secondary-dark: #{$background-secondary-dark};
-
+  --sidebar-full-width: calc(var(--app-sidebar-width) + var(--app-padding-left) + (var(--app-padding-right)));
 
   /* status colors */
   --success-light: #{$success-light};

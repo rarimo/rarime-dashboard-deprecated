@@ -9,7 +9,7 @@ import {
 } from 'react'
 
 import { Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 interface Props extends HTMLAttributes<HTMLInputElement> {
   name?: string
@@ -72,7 +72,7 @@ const CheckboxField: FC<Props> = ({
           {value ? (
             <Icon
               className='checkbox-field__frame-icon'
-              name={ICON_NAMES.check}
+              name={IconNames.check}
             />
           ) : (
             <></>

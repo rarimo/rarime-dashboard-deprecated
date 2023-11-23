@@ -2,10 +2,10 @@ import './style.scss'
 
 import { FC, HTMLAttributes } from 'react'
 
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 interface IconProps extends HTMLAttributes<HTMLOrSVGElement> {
-  name: ICON_NAMES
+  name: IconNames
   width?: string | number
   height?: string | number
 }

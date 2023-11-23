@@ -3,7 +3,7 @@ import './styles.scss'
 import { FC, HTMLAttributes } from 'react'
 
 import { AppButton, Modal } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   isShown: boolean
@@ -41,7 +41,7 @@ const BasicModal: FC<Props> = ({
             className='basic-modal__close-btn'
             scheme='none'
             size='none'
-            iconRight={ICON_NAMES.x}
+            iconRight={IconNames.x}
             onClick={() => updateIsShown(false)}
           />
         </div>

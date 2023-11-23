@@ -5,7 +5,7 @@ import { toast, TypeOptions } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 
 import { DefaultToast } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 import { NotificationObjectPayload } from '@/types'
 
 const NOTIFICATION_TYPE = {
@@ -45,11 +45,11 @@ export const useNotification = () => {
 
   const defaultIconNames = useMemo(
     () => ({
-      [NOTIFICATION_TYPE.default]: ICON_NAMES.exclamationCircle,
-      [NOTIFICATION_TYPE.info]: ICON_NAMES.exclamationCircle,
-      [NOTIFICATION_TYPE.success]: ICON_NAMES.checkCircle,
-      [NOTIFICATION_TYPE.error]: ICON_NAMES.xCircle,
-      [NOTIFICATION_TYPE.warning]: ICON_NAMES.shieldExclamation,
+      [NOTIFICATION_TYPE.default]: IconNames.exclamationCircle,
+      [NOTIFICATION_TYPE.info]: IconNames.exclamationCircle,
+      [NOTIFICATION_TYPE.success]: IconNames.checkCircle,
+      [NOTIFICATION_TYPE.error]: IconNames.xCircle,
+      [NOTIFICATION_TYPE.warning]: IconNames.shieldExclamation,
     }),
     [],
   )
@@ -61,7 +61,7 @@ export const useNotification = () => {
     ) => {
       let title = ''
       let message = ''
-      let iconName: ICON_NAMES | undefined
+      let iconName: IconNames | undefined
 
       if (isObject(payload)) {
         const msgPayload = payload as NotificationObjectPayload

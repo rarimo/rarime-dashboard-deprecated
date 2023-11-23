@@ -5,7 +5,8 @@ import { FC, HTMLAttributes } from 'react'
 
 import { AppButton, Icon } from '@/common'
 import { useWeb3Context } from '@/contexts'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
+import { IconNamesType } from '@/types'
 
 type Props = {
   credentials: W3CCredential[]
@@ -26,15 +27,15 @@ const Sidebar: FC<Props> = ({ credentials }) => {
             alt='avatar'
           />
           <div className='sidebar-header__content-text'>
-            <p className='sidebar-header__content-text_title'>{'Profile #1'}</p>
-            <p className='sidebar-header__content-text_description'>
+            <p className='sidebar-header__content-text-title'>{'Profile #1'}</p>
+            <p className='sidebar-header__content-text-description'>
               {/*TODO: add dynamic proofs*/}
               {credentials.length + ' Credentials'}
             </p>
           </div>
         </div>
         <AppButton
-          iconLeft={ICON_NAMES.expandAll}
+          iconLeft={IconNames.expandAll}
           scheme='none'
           size='x-small'
         />
@@ -44,18 +45,14 @@ const Sidebar: FC<Props> = ({ credentials }) => {
           <div className='sidebar-content__wallet-content'>
             <Icon
               className='sidebar-content__wallet-icon'
-              name={
-                ICON_NAMES[
-                  String(provider?.providerType) as keyof typeof ICON_NAMES
-                ]
-              }
+              name={IconNames[String(provider?.providerType) as IconNamesType]}
             />
             <span className='sidebar-content__wallet-name'>
               {String(provider?.providerType)}
             </span>
           </div>
           <AppButton
-            iconLeft={ICON_NAMES.expandMore}
+            iconLeft={IconNames.expandMore}
             scheme='none'
             size='x-small'
           />

@@ -16,7 +16,7 @@ import {
 import { v4 as uuidv4 } from 'uuid'
 
 import { Collapse, Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 interface Props<V extends string> extends HTMLAttributes<HTMLInputElement> {
   scheme?: 'primary'
@@ -222,14 +222,14 @@ function InputField<V extends string>({
                 >
                   <Icon
                     className='input-field__password-icon'
-                    name={isPasswordShown ? ICON_NAMES.eye : ICON_NAMES.eyeOff}
+                    name={isPasswordShown ? IconNames.eye : IconNames.eyeOff}
                   />
                 </button>
               )) ||
               (errorMessage && (
                 <Icon
                   className='input-field__error-icon'
-                  name={ICON_NAMES.exclamationCircle}
+                  name={IconNames.exclamationCircle}
                 />
               ))}
           </div>

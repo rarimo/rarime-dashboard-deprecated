@@ -3,13 +3,13 @@ import './styles.scss'
 import { FC, HTMLAttributes, useMemo } from 'react'
 
 import { Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 import { SelectField } from '@/fields'
 
 type ValueOption = {
   title: string
   value: string | number
-  iconName: ICON_NAMES
+  iconName: IconNames
 }
 
 interface Props extends HTMLAttributes<HTMLDivElement> {

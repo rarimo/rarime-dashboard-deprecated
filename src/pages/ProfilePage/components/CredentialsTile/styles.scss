@@ -1,9 +1,9 @@
-.credential-tile{
+.credential-tile {
   border-radius: toRem(8);
   border: toRem(1) solid var(--border-primary-light);
 }
 
-.credential-tile__content{
+.credential-tile__content {
   background: var(--background-secondary-dark);
   padding: toRem(16);
   position: relative;
@@ -52,7 +52,7 @@
   margin-top: toRem(4);
 }
 
-.credential-tile__footer{
+.credential-tile__footer {
   padding: toRem(16);
   display: flex;
   justify-content: space-between;
@@ -64,7 +64,7 @@
   align-items: center;
 }
 
-.credential-tile__footer-date_text {
+.credential-tile__footer-date-text {
   color: var(--text-icon-secondary);
   font-size: toRem(12);
 }
@@ -80,13 +80,13 @@
   align-items: center;
 }
 
-.credential-tile__footer-provider_name {
+.credential-tile__footer-provider-name {
   color: var(--text-icon-secondary);
   font-size: toRem(12);
   line-height: toRem(16);
 }
 
-.credential-tile__footer-provider_icon{
+.credential-tile__footer-provider-icon {
   margin-right: toRem(8);
   width: toRem(16);
   height: toRem(16);
