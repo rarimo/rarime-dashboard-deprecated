@@ -18,31 +18,31 @@ const AppNavbar: FC<HTMLAttributes<HTMLDivElement>> = ({
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={IconNames.search}
+          iconLeft={IconNames.Search}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={IconNames.plus}
+          iconLeft={IconNames.Plus}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={IconNames.bolt}
+          iconLeft={IconNames.Bolt}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={IconNames.checkCircle}
+          iconLeft={IconNames.CheckCircle}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={IconNames.accountBalanceWallet}
+          iconLeft={IconNames.AccountBalanceWallet}
           routePath={RoutesPaths.App}
         />
       </div>

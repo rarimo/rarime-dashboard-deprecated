@@ -159,7 +159,7 @@ function SelectField<T>({
                   ? ['select-field__select-head-indicator--open']
                   : []),
               ].join(' ')}
-              name={IconNames.chevronDown}
+              name={IconNames.ChevronDown}
             />
           </button>
 

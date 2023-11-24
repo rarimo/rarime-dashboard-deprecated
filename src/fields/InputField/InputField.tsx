@@ -222,14 +222,14 @@ function InputField<V extends string>({
                 >
                   <Icon
                     className='input-field__password-icon'
-                    name={isPasswordShown ? IconNames.eye : IconNames.eyeOff}
+                    name={isPasswordShown ? IconNames.Eye : IconNames.EyeOff}
                   />
                 </button>
               )) ||
               (errorMessage && (
                 <Icon
                   className='input-field__error-icon'
-                  name={IconNames.exclamationCircle}
+                  name={IconNames.ExclamationCircle}
                 />
               ))}
           </div>

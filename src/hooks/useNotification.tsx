@@ -45,11 +45,11 @@ export const useNotification = () => {
 
   const defaultIconNames = useMemo(
     () => ({
-      [NOTIFICATION_TYPE.default]: IconNames.exclamationCircle,
-      [NOTIFICATION_TYPE.info]: IconNames.exclamationCircle,
-      [NOTIFICATION_TYPE.success]: IconNames.checkCircle,
-      [NOTIFICATION_TYPE.error]: IconNames.xCircle,
-      [NOTIFICATION_TYPE.warning]: IconNames.shieldExclamation,
+      [NOTIFICATION_TYPE.default]: IconNames.ExclamationCircle,
+      [NOTIFICATION_TYPE.info]: IconNames.ExclamationCircle,
+      [NOTIFICATION_TYPE.success]: IconNames.CheckCircle,
+      [NOTIFICATION_TYPE.error]: IconNames.XCircle,
+      [NOTIFICATION_TYPE.warning]: IconNames.ShieldExclamation,
     }),
     [],
   )

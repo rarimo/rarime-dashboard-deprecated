@@ -5,7 +5,7 @@ import { FC, HTMLAttributes } from 'react'
 
 import { Icon } from '@/common'
 import { CredentialsNames, IconNames } from '@/enums'
-import {CredentialsNamesType, IconNamesType} from '@/types'
+import { CredentialsNamesType, IconNamesType } from '@/types'
 
 type Props = {
   credential: W3CCredential
@@ -19,13 +19,11 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
           className='credential-tile__content-icon'
           width='40'
           height='40'
-          name={IconNames.proof}
+          name={IconNames.Proof}
         />
         <h3 className='credential-tile__content-title'>
           {CredentialsNames[
-            String(
-              credential.credentialSubject.type,
-            ) as CredentialsNamesType
+            String(credential.credentialSubject.type) as CredentialsNamesType
           ] ?? credential.credentialSubject.type}
         </h3>
         {/*Todo: add subtitle*/}
@@ -37,7 +35,7 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
             <Icon
               width={16}
               height={16}
-              name={IconNames.calendar}
+              name={IconNames.Calendar}
               className='credential-tile__footer-icon'
             />
             <p className='credential-tile__footer-date-text'>

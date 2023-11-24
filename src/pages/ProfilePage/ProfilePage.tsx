@@ -42,7 +42,7 @@ const ProfilePage = () => {
                     <AppButton
                       scheme='none'
                       text={'All'}
-                      iconRight={IconNames.expandMore}
+                      iconRight={IconNames.ExpandMore}
                     />
                   </div>
                   <div className='profile-page__content-actions-filter'>
@@ -50,7 +50,7 @@ const ProfilePage = () => {
                     <AppButton
                       scheme='none'
                       text={'All'}
-                      iconRight={IconNames.expandMore}
+                      iconRight={IconNames.ExpandMore}
                     />
                   </div>
                   <AppButton
@@ -59,7 +59,7 @@ const ProfilePage = () => {
                     scheme='filled'
                     size='small'
                     modification='border-circle'
-                    iconLeft={IconNames.plus}
+                    iconLeft={IconNames.Plus}
                   />
                 </div>
               )}
@@ -76,7 +76,7 @@ const ProfilePage = () => {
                   width={88}
                   height={88}
                   className='profile-page__content-empty-icon'
-                  name={IconNames.plusInCircle}
+                  name={IconNames.PlusInCircle}
                 />
                 <span className='profile-page__content-empty-title'>
                   {'Add Credentials'}
@@ -86,7 +86,7 @@ const ProfilePage = () => {
                 </p>
                 <AppButton
                   className='profile-page__content-empty-button'
-                  iconLeft={IconNames.plus}
+                  iconLeft={IconNames.Plus}
                   text={'New Proof'}
                   size='large'
                   modification='border-circle'

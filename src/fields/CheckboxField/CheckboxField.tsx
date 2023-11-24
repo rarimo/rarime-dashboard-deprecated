@@ -72,7 +72,7 @@ const CheckboxField: FC<Props> = ({
           {value ? (
             <Icon
               className='checkbox-field__frame-icon'
-              name={IconNames.check}
+              name={IconNames.Check}
             />
           ) : (
             <></>

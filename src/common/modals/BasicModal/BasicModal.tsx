@@ -41,7 +41,7 @@ const BasicModal: FC<Props> = ({
             className='basic-modal__close-btn'
             scheme='none'
             size='none'
-            iconRight={IconNames.x}
+            iconRight={IconNames.X}
             onClick={() => updateIsShown(false)}
           />
         </div>

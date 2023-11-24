@@ -1,12 +1,12 @@
 import './styles.scss'
 
+import { PROVIDERS } from '@distributedlab/w3p'
 import { W3CCredential } from '@rarimo/rarime-connector'
 import { FC, HTMLAttributes } from 'react'
 
 import { AppButton, Icon } from '@/common'
 import { useWeb3Context } from '@/contexts'
 import { IconNames } from '@/enums'
-import { IconNamesType } from '@/types'
 
 type Props = {
   credentials: W3CCredential[]
@@ -14,6 +14,14 @@ type Props = {
 
 const Sidebar: FC<Props> = ({ credentials }) => {
   const { provider } = useWeb3Context()
+  const walletIcon = () => {
+    switch (provider?.providerType) {
+      case PROVIDERS.Metamask:
+        return IconNames.Metamask
+      default:
+        return IconNames.Metamask
+    }
+  }
 
   return (
     <div className='sidebar'>
@@ -35,7 +43,7 @@ const Sidebar: FC<Props> = ({ credentials }) => {
           </div>
         </div>
         <AppButton
-          iconLeft={IconNames.expandAll}
+          iconLeft={IconNames.ExpandAll}
           scheme='none'
           size='x-small'
         />
@@ -45,14 +53,14 @@ const Sidebar: FC<Props> = ({ credentials }) => {
           <div className='sidebar-content__wallet-content'>
             <Icon
               className='sidebar-content__wallet-icon'
-              name={IconNames[String(provider?.providerType) as IconNamesType]}
+              name={walletIcon()}
             />
             <span className='sidebar-content__wallet-name'>
               {String(provider?.providerType)}
             </span>
           </div>
           <AppButton
-            iconLeft={IconNames.expandMore}
+            iconLeft={IconNames.ExpandMore}
             scheme='none'
             size='x-small'
           />

@@ -13,7 +13,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const DefaultToast: FC<Props> = ({ title, message, iconName, ...rest }) => {
-  const toastIcon = useMemo(() => iconName || IconNames.checkCircle, [iconName])
+  const toastIcon = useMemo(() => iconName || IconNames.CheckCircle, [iconName])
 
   return (
     <div className='default-toast__body' {...rest}>

@@ -14,7 +14,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const ErrorMessage: FC<Props> = ({
   title,
   message,
-  iconName = IconNames.exclamationCircle,
+  iconName = IconNames.ExclamationCircle,
   className = '',
   ...rest
 }) => {
