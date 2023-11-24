@@ -43,3 +43,44 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('EuclidCirculiarB/Euclid-Circular-B-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('EuclidCirculiarB/Euclid-Circular-B-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('EuclidCirculiarB/Euclid-Circular-B-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('EuclidCirculiarB/Euclid-Circular-B-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Euclid Circular B';
+  src: url('EuclidCirculiarB/Euclid-Circular-B-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+

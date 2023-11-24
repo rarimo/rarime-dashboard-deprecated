@@ -3,7 +3,7 @@ import './styles.scss'
 import { FC, HTMLAttributes } from 'react'
 
 import { AppButton, AppLogo } from '@/common'
-import { ICON_NAMES, RoutesPaths } from '@/enums'
+import { IconNames, RoutesPaths } from '@/enums'
 
 const AppNavbar: FC<HTMLAttributes<HTMLDivElement>> = ({
   className = '',
@@ -18,31 +18,31 @@ const AppNavbar: FC<HTMLAttributes<HTMLDivElement>> = ({
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={ICON_NAMES.search}
+          iconLeft={IconNames.Search}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={ICON_NAMES.plus}
+          iconLeft={IconNames.Plus}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={ICON_NAMES.bolt}
+          iconLeft={IconNames.Bolt}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={ICON_NAMES.checkCircle}
+          iconLeft={IconNames.CheckCircle}
         />
         <AppButton
           className='app-navbar__link'
           scheme='none'
           size='none'
-          iconLeft={ICON_NAMES.accountBalanceWallet}
+          iconLeft={IconNames.AccountBalanceWallet}
           routePath={RoutesPaths.App}
         />
       </div>

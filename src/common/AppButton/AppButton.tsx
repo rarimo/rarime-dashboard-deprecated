@@ -4,7 +4,7 @@ import { AnchorHTMLAttributes, HTMLAttributes, useMemo } from 'react'
 import { LinkProps, NavLink } from 'react-router-dom'
 
 import { Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 type Props<R extends string, H extends string> = {
   text?: string
@@ -14,8 +14,8 @@ type Props<R extends string, H extends string> = {
   size?: 'large' | 'medium' | 'small' | 'x-small' | 'none'
   href?: H
   routePath?: R
-  iconLeft?: ICON_NAMES
-  iconRight?: ICON_NAMES
+  iconLeft?: IconNames
+  iconRight?: IconNames
   isDisabled?: boolean
 } & (R extends string
   ? Omit<LinkProps, 'to'>

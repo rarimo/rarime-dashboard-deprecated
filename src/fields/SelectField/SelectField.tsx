@@ -16,7 +16,7 @@ import { useClickAway } from 'react-use'
 import { v4 as uuidv4 } from 'uuid'
 
 import { Collapse, Icon } from '@/common'
-import { ICON_NAMES } from '@/enums'
+import { IconNames } from '@/enums'
 
 interface Props<T> extends HTMLAttributes<HTMLSelectElement> {
   scheme?: 'primary'
@@ -159,7 +159,7 @@ function SelectField<T>({
                   ? ['select-field__select-head-indicator--open']
                   : []),
               ].join(' ')}
-              name={ICON_NAMES.chevronDown}
+              name={IconNames.ChevronDown}
             />
           </button>
 

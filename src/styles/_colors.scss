@@ -2,7 +2,9 @@ $white: #ffffff;
 $white-rgb: hexToRGB($white);
 $black: #000000;
 $black-rgb: hexToRGB($black);
+$transparent-rgba: rgba(255, 255, 255, 0);
 
+$background-secondary-dark: #F5F6FF;
 $background-secondary-main: #E0E1F8;
 $active-icon-primary: #3044FE;
 
@@ -27,7 +29,7 @@ $info-dark: #0094cc;
 /* brand colors */
 
 $primary-light: #e2ecfc;
-$primary-main: #01579b;
+$primary-main: #3044FE;
 $primary-dark: #054679;
 
 $primary-light-rgb: hexToRGB($primary-light);
@@ -39,6 +41,10 @@ $secondary-main: #8d91a5;
 $secondary-dark: #5b6271;
 
 /* typography colors */
+
+$text-icon-primary: #1F2124;
+$text-icon-secondary: #687281;
+$fill-icon-primary: #F1F2F4;
 
 $text-primary-light: #575761;
 $text-primary-main: #2d3441;
@@ -58,7 +64,7 @@ $text-secondary-invert-dark: rgba(#fffbfe, 0.5);
 
 /* border colors */
 
-$border-primary-light: #a9abb4;
+$border-primary-light: #EBECEF;
 $border-primary-main: #74767e;
 $border-primary-dark: #45484f;
 
