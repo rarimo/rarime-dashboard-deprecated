@@ -1,25 +1,37 @@
 import './styles.scss'
 
+import { config } from '@config'
 import { W3CCredential } from '@rarimo/rarime-connector'
 import { useCallback, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { AppButton, Icon } from '@/common'
-import { useMetamaskZkpSnapContext } from '@/contexts'
-import { IconNames } from '@/enums'
+import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
+import { IconNames, RoutesPaths } from '@/enums'
 
 import { CredentialsTile, Sidebar } from './components'
 
 const ProfilePage = () => {
   const [credentials, setCredentials] = useState([] as W3CCredential[])
-  const { getCredentials } = useMetamaskZkpSnapContext()
+  const { getCredentials, connectOrInstallSnap, checkMetamaskExists } =
+    useMetamaskZkpSnapContext()
+  const { provider } = useWeb3Context()
+  const navigate = useNavigate()
 
   const getUserCredentials = useCallback(async () => {
-    setCredentials(await getCredentials())
-  }, [getCredentials])
+    if (await checkMetamaskExists()) {
+      await connectOrInstallSnap()
+      setCredentials(await getCredentials())
+    }
+  }, [checkMetamaskExists, connectOrInstallSnap, getCredentials])
 
   useEffect(() => {
+    if (!provider?.address) {
+      navigate(RoutesPaths.SignIn)
+      return
+    }
     getUserCredentials()
-  }, [getUserCredentials])
+  }, [getUserCredentials, navigate, provider])
 
   return (
     <div className='profile-page'>
@@ -90,6 +102,7 @@ const ProfilePage = () => {
                   text={'New Proof'}
                   size='large'
                   modification='border-circle'
+                  routePath={config.ROBOTORNOT_LINK}
                 />
               </div>
             )}

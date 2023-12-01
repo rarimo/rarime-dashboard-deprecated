@@ -1,7 +1,6 @@
 import { Chain } from '@distributedlab/w3p'
 import mapKeys from 'lodash/mapKeys'
 import pickBy from 'lodash/pickBy'
-import { LogLevelDesc } from 'loglevel'
 
 import FALLBACK_SUPPORTED_CHAINS from '@/assets/fallback-supported-chains.json'
 
@@ -10,9 +9,7 @@ import packageJson from '../package.json'
 export type SUPPORTED_CHAINS = keyof typeof FALLBACK_SUPPORTED_CHAINS
 
 export const config = {
-  API_URL: import.meta.env.VITE_API_URL,
   APP_NAME: import.meta.env.VITE_APP_NAME,
-  LOG_LEVEL: 'trace' as LogLevelDesc,
   BUILD_VERSION: packageJson.version || import.meta.env.VITE_APP_BUILD_VERSION,
   SUPPORTED_CHAINS_DETAILS: {
     ...FALLBACK_SUPPORTED_CHAINS,
@@ -20,6 +17,7 @@ export const config = {
       JSON.parse(import.meta.env.VITE_SUPPORTED_CHAINS_DETAILS)),
   } as Record<keyof typeof FALLBACK_SUPPORTED_CHAINS, Chain>,
   DEFAULT_CHAIN: import.meta.env.VITE_DEFAULT_CHAIN as SUPPORTED_CHAINS,
+  ROBOTORNOT_LINK: 'https://robotornot.mainnet-beta.rarimo.com/',
   CHROME_METAMASK_ADDON_LINK:
     'https://chrome.google.com/webstore/detail/metamask/',
   FIREFOX_METAMASK_ADDON_LINK:
