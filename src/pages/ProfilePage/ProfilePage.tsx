@@ -13,17 +13,13 @@ import { CredentialsTile, Sidebar } from './components'
 
 const ProfilePage = () => {
   const [credentials, setCredentials] = useState([] as W3CCredential[])
-  const { getCredentials, connectOrInstallSnap, checkMetamaskExists } =
-    useMetamaskZkpSnapContext()
+  const { getCredentials } = useMetamaskZkpSnapContext()
   const { provider } = useWeb3Context()
   const navigate = useNavigate()
 
   const getUserCredentials = useCallback(async () => {
-    if (await checkMetamaskExists()) {
-      await connectOrInstallSnap()
-      setCredentials(await getCredentials())
-    }
-  }, [checkMetamaskExists, connectOrInstallSnap, getCredentials])
+    setCredentials(await getCredentials())
+  }, [getCredentials])
 
   useEffect(() => {
     if (!provider?.address) {

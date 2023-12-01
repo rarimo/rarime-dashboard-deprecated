@@ -5,15 +5,17 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { AppButton, Icon } from '@/common'
-import { useWeb3Context } from '@/contexts'
+import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
 import { IconNames, RoutesPaths } from '@/enums'
 
 const SignInPage = () => {
   const navigate = useNavigate()
   const { init: initWeb3, provider } = useWeb3Context()
+  const { connectOrInstallSnap } = useMetamaskZkpSnapContext()
 
   const connectWallet = async () => {
     await initWeb3(PROVIDERS.Metamask)
+    await connectOrInstallSnap()
   }
 
   useEffect(() => {
