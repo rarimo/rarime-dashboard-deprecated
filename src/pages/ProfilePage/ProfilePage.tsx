@@ -3,6 +3,7 @@ import './styles.scss'
 import { config } from '@config'
 import { W3CCredential } from '@rarimo/rarime-connector'
 import { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 import { AppButton, Icon } from '@/common'
@@ -16,6 +17,7 @@ const ProfilePage = () => {
   const { getCredentials } = useMetamaskZkpSnapContext()
   const { provider } = useWeb3Context()
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const getUserCredentials = useCallback(async () => {
     setCredentials(await getCredentials())
@@ -32,11 +34,9 @@ const ProfilePage = () => {
   return (
     <div className='profile-page'>
       <div className='profile-page__wrapper'>
-        <h1 className='profile-page__title'>{'Profiles & Wallets'}</h1>
+        <h1 className='profile-page__title'>{t('profile-page.title')}</h1>
         <p className='profile-page__description'>
-          {
-            'Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard'
-          }
+          {t('profile-page.description')}
         </p>
         <div className='profile-page__content-wrapper'>
           <Sidebar credentials={credentials ?? []} />
@@ -46,7 +46,7 @@ const ProfilePage = () => {
               {Boolean(credentials.length) && (
                 <div className='profile-page__content-actions'>
                   <div className='profile-page__content-actions-wallets'>
-                    <span>{'Wallet'}</span>
+                    <span>{t('profile-page.wallet')}</span>
                     <AppButton
                       scheme='none'
                       text={'All'}
@@ -54,7 +54,7 @@ const ProfilePage = () => {
                     />
                   </div>
                   <div className='profile-page__content-actions-filter'>
-                    <span>{'Filter'}</span>
+                    <span>{t('profile-page.filter')}</span>
                     <AppButton
                       scheme='none'
                       text={'All'}
@@ -87,10 +87,10 @@ const ProfilePage = () => {
                   name={IconNames.PlusInCircle}
                 />
                 <span className='profile-page__content-empty-title'>
-                  {'Add Credentials'}
+                  {t('profile-page.title')}
                 </span>
                 <p className='profile-page__content-empty-description'>
-                  {'Explore credentials marketplace with different providers '}
+                  {t('profile-page.description')}
                 </p>
                 <AppButton
                   className='profile-page__content-empty-button'

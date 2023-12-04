@@ -2,6 +2,7 @@ import './styles.scss'
 
 import { PROVIDERS } from '@distributedlab/w3p'
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 import { AppButton, Icon } from '@/common'
@@ -10,6 +11,7 @@ import { IconNames, RoutesPaths } from '@/enums'
 
 const SignInPage = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const { init: initWeb3, provider } = useWeb3Context()
   const { connectOrInstallSnap } = useMetamaskZkpSnapContext()
 
@@ -33,11 +35,9 @@ const SignInPage = () => {
           className='sign-in-page__icon'
           name={IconNames.User}
         />
-        <span className='sign-in-page__title'>{'Sign in'}</span>
+        <span className='sign-in-page__title'>{t('sign-in-page.title')}</span>
         <p className='sign-in-page__description'>
-          {
-            'Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard'
-          }
+          {t('sign-in-page.description')}
         </p>
         <AppButton
           className='sign-in-page__button'
