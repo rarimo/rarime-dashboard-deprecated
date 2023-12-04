@@ -1,5 +1,4 @@
-import { PROVIDERS } from '@distributedlab/w3p'
-import { FC, HTMLAttributes, useCallback, useEffect, useState } from 'react'
+import { FC, HTMLAttributes, useEffect, useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 
 import { AppNavbar, Loader } from '@/common'
@@ -10,42 +9,28 @@ import { useNotification, useViewportSizes } from '@/hooks'
 export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
   useViewportSizes()
 
-  const [isAppInitialized, setIsAppInitialized] = useState(false)
-
-  const { showToast } = useNotification()
   const { provider, init: initWeb3 } = useWeb3Context()
-  const { checkMetamaskExists, checkSnapExists, connectOrInstallSnap } =
+  const [isAppInitialized, setIsAppInitialized] = useState(false)
+  const { checkMetamaskExists, connectOrInstallSnap, checkSnapExists } =
     useMetamaskZkpSnapContext()
+  const { showToast } = useNotification()
 
-  const init = useCallback(async () => {
-    if (provider?.address) return
-
+  const init = async () => {
     try {
+      if (provider?.address) return
       if (await checkMetamaskExists()) {
-        /**
-         * We not pass providerType here,
-         * because only want to check is user was connected before
-         */
         await initWeb3()
+
         if (await checkSnapExists()) {
           await connectOrInstallSnap()
-        } else {
-          await initWeb3(PROVIDERS.Metamask)
-          await connectOrInstallSnap()
         }
+
+        setIsAppInitialized(true)
       }
     } catch (error) {
       ErrorHandler.processWithoutFeedback(error)
     }
-
-    setIsAppInitialized(true)
-  }, [
-    provider?.address,
-    checkMetamaskExists,
-    initWeb3,
-    checkSnapExists,
-    connectOrInstallSnap,
-  ])
+  }
 
   useEffect(() => {
     const showSuccessToast = (payload: unknown) => showToast('success', payload)
@@ -79,7 +64,7 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
 
   return (
     <div className='app'>
-      <AppNavbar className='app__navbar' />
+      {provider?.isConnected && <AppNavbar className='app__navbar' />}
       <div className='app__main'>
         {isAppInitialized ? children : <Loader />}
       </div>

@@ -1,3 +1,4 @@
 export enum RoutesPaths {
-  App = '/',
+  App = '/dashboard',
+  SignIn = '/signin',
 }
