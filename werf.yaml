@@ -1,8 +1,9 @@
+
 configVersion: 1
-project: "web-client"
+project: "rarime-dashboard"
 ---
 image: builder
-from: registry.gitlab.com/tokend/devops/docker-containers:front16-914ecbd7e2465bc9570bf60322f3951eee7989c9
+from: node:16.20-alpine
 git:
   - add: /
     to: /app
@@ -13,6 +14,8 @@ git:
       setup:
         - "**/*"
 shell:
+  beforeInstall:
+    - apk --no-cache --update --virtual build-dependencies add python3 make g++ git
   install:
     - cd /app
     #- yarn autoclean --init
@@ -20,6 +23,7 @@ shell:
     - yarn install
   setup:
     - cd /app
+    - export VITE_APP_DOMAIN="{{ env "VITE_APP_DOMAIN" }}"
     - yarn build
     #- sh -c '[ -d /app/dist/files ] && echo "$FILE exist." || mkdir -p /app/dist/files'
     #- sh -c '[ -d /app/files ] && echo "$FILE exist." || mkdir -p /app/files'
