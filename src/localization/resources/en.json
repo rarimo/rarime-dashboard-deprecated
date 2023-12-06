@@ -12,6 +12,10 @@
     "title": "Sign in",
     "description": "Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard"
   },
+  "mobile-device-message": {
+    "title": "Mobile version is not yet available.",
+    "description": "Please use a desktop device"
+  },
   "validations": {
     "field-error_required": "Please fill out this field",
     "field-error_minLength": "This field must contain minimum {{minLength}} symbols",

@@ -1,9 +1,10 @@
-import { FC, HTMLAttributes, useEffect, useState } from 'react'
+import { FC, HTMLAttributes, useEffect, useMemo, useState } from 'react'
 import { ToastContainer } from 'react-toastify'
+import { useWindowSize } from 'react-use'
 
-import { AppNavbar, Loader } from '@/common'
+import { AppNavbar, Loader, MobileDeviceMessage } from '@/common'
 import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
-import { bus, BUS_EVENTS, ErrorHandler } from '@/helpers'
+import { bus, BUS_EVENTS, ErrorHandler, isMobile } from '@/helpers'
 import { useNotification, useViewportSizes } from '@/hooks'
 
 export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
@@ -14,6 +15,15 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
   const { checkMetamaskExists, connectOrInstallSnap, checkSnapExists } =
     useMetamaskZkpSnapContext()
   const { showToast } = useNotification()
+  const { width } = useWindowSize()
+
+  const isDeviceMobile = useMemo(() => {
+    if (width <= 1280) {
+      return isMobile()
+    }
+
+    return false
+  }, [width])
 
   const init = async () => {
     try {
@@ -64,12 +74,17 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
 
   return (
     <div className='app'>
-      {provider?.isConnected && <AppNavbar className='app__navbar' />}
-      <div className='app__main'>
-        {isAppInitialized ? children : <Loader />}
-      </div>
-
-      <ToastContainer />
+      {isDeviceMobile ? (
+        <MobileDeviceMessage />
+      ) : (
+        <>
+          {provider?.isConnected && <AppNavbar className='app__navbar' />}
+          <div className='app__main'>
+            {isAppInitialized ? children : <Loader />}
+          </div>
+          <ToastContainer />
+        </>
+      )}
     </div>
   )
 }
