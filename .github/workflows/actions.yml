@@ -28,7 +28,7 @@ jobs:
       - name: Run Build
         env: # Or as an environment variable
 
-          VITE_APP_DOMAIN: https://rarime-dashboard.com
+          VITE_APP_DOMAIN: https://dashboard.rarime.com
         run: |
           cp .env-development .env
           . $(werf ci-env github --as-file)
