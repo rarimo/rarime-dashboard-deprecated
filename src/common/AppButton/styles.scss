@@ -27,30 +27,6 @@
     opacity: 0.5;
   }
 
-  &:not([disabled]):hover {
-    text-decoration: none;
-    transition-timing-function: ease-out;
-    color: var(--app-button-text-hover);
-    background-color: var(--app-button-bg-hover);
-    border: var(--app-button-border-hover);
-  }
-
-  &:not([disabled]):focus {
-    text-decoration: none;
-    transition-timing-function: ease-out;
-    color: var(--app-button-text-focused);
-    background-color: var(--app-button-bg-focused);
-    border: var(--app-button-border-focused);
-  }
-
-  &:not([disabled]):active {
-    text-decoration: none;
-    transition-timing-function: ease-out;
-    color: var(--app-button-text-active);
-    background-color: var(--app-button-bg-active);
-    border: var(--app-button-border-active);
-  }
-
   &--scheme-filled {
     --app-button-filled-bg: var(--primary-main);
     --app-button-filled-bg-hover: var(--primary-main);

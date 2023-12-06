@@ -6,8 +6,9 @@
   width: 100%;
   background-image: url("/imgs/app-background.webp");
   background-repeat: no-repeat;
-  background-position: center right;
-  background-size: contain;
+  background-position: right;
+  background-size: 50% / cover;
+  backdrop-filter: opacity(0.1);
 
   &.no-webp {
     background-image: url("/imgs/app-bg.png");
@@ -50,7 +51,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: toRem(50) toRem(60) toRem(120);
+  width: 36%;
+  padding: toRem(60) toRem(50) toRem(90);
   border-radius: toRem(18);
   background: rgba(255, 255, 255, 0.82);
 }
@@ -70,5 +72,8 @@
 .sign-in-page__description {
   color: var(--text-icon-secondary);
   text-align: center;
+  font-size: toRem(16);
   margin-bottom: toRem(32);
+  line-height: toRem(20);
+  max-width: toRem(420);
 }

@@ -30,6 +30,7 @@ export enum IconNames {
   Database = 'database',
   Document = 'document',
   Duplicate = 'duplicate',
+  DeviceMobile = 'device-mobile',
   ExclamationCircle = 'exclamation-circle',
   Exclamation = 'exclamation',
   ExpandMore = 'expand-more',

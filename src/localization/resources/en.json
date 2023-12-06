@@ -1,15 +1,20 @@
 {
   "profile-page": {
-    "title" : "Profiles & Wallets",
-    "description": "Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard",
+    "title" : "Add Credentials",
+    "description": "Explore credentials marketplace with different providers",
     "wallet": "Wallet",
     "filter": "Filter",
+    "credential": "credential",
     "empty-title": "Add Credentials",
     "empty-description": "Explore credentials marketplace with different providers "
   },
   "sign-in-page": {
     "title": "Sign in",
     "description": "Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard"
+  },
+  "mobile-device-message": {
+    "title": "Mobile version is not yet available.",
+    "description": "Please use a desktop device"
   },
   "validations": {
     "field-error_required": "Please fill out this field",
