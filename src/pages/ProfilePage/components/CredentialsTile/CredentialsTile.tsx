@@ -26,8 +26,6 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
             String(credential.credentialSubject.type) as CredentialsNamesType
           ] ?? credential.credentialSubject.type}
         </h3>
-        {/*Todo: add subtitle*/}
-        <p className='credential-tile__content-subtitle'>{'subtitle'}</p>
       </div>
       <div className='credential-tile__footer'>
         {credential.expirationDate && (

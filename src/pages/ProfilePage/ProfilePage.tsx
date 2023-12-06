@@ -34,50 +34,39 @@ const ProfilePage = () => {
   return (
     <div className='profile-page'>
       <div className='profile-page__wrapper'>
-        <h1 className='profile-page__title'>{t('profile-page.title')}</h1>
-        <p className='profile-page__description'>
-          {t('profile-page.description')}
-        </p>
+        <div className='profile-page__header'>
+          <h1 className='profile-page__title'>{t('profile-page.title')}</h1>
+          <p className='profile-page__description'>
+            {t('profile-page.description')}
+          </p>
+        </div>
         <div className='profile-page__content-wrapper'>
           <Sidebar credentials={credentials ?? []} />
           <div className='profile-page__content'>
-            <div className='profile-page__content-header'>
-              <h2 className='profile-page__content-title'>{'Profile #1'}</h2>
-              {Boolean(credentials.length) && (
-                <div className='profile-page__content-actions'>
-                  <div className='profile-page__content-actions-wallets'>
-                    <span>{t('profile-page.wallet')}</span>
-                    <AppButton
-                      scheme='none'
-                      text={'All'}
-                      iconRight={IconNames.ExpandMore}
-                    />
-                  </div>
-                  <div className='profile-page__content-actions-filter'>
-                    <span>{t('profile-page.filter')}</span>
-                    <AppButton
-                      scheme='none'
-                      text={'All'}
-                      iconRight={IconNames.ExpandMore}
-                    />
-                  </div>
-                  <AppButton
-                    className='profile-page__content-actions-add'
-                    text={'New'}
-                    scheme='filled'
-                    size='small'
-                    modification='border-circle'
-                    iconLeft={IconNames.Plus}
-                  />
-                </div>
-              )}
-            </div>
             {credentials.length ? (
-              <div className='profile-page__content-tiles'>
-                {credentials.map((credential, idx) => (
-                  <CredentialsTile key={idx} credential={credential} />
-                ))}
-              </div>
+              <>
+                <div className='profile-page__content-header'>
+                  <h2 className='profile-page__content-title'>
+                    {credentials.length + ' ' + t('profile-page.credential')}
+                  </h2>
+                  <div className='profile-page__content-actions'>
+                    <AppButton
+                      className='profile-page__content-actions-add'
+                      text={'Add'}
+                      scheme='filled'
+                      size='medium'
+                      modification='border-circle'
+                      iconLeft={IconNames.Plus}
+                      routePath={config.ROBOTORNOT_LINK}
+                    />
+                  </div>
+                </div>
+                <div className='profile-page__content-tiles'>
+                  {credentials.map((credential, idx) => (
+                    <CredentialsTile key={idx} credential={credential} />
+                  ))}
+                </div>
+              </>
             ) : (
               <div className='profile-page__content-empty'>
                 <Icon
@@ -95,7 +84,7 @@ const ProfilePage = () => {
                 <AppButton
                   className='profile-page__content-empty-button'
                   iconLeft={IconNames.Plus}
-                  text={'New Proof'}
+                  text={'Add'}
                   size='large'
                   modification='border-circle'
                   routePath={config.ROBOTORNOT_LINK}

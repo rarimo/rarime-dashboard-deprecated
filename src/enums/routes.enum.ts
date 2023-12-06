@@ -1,4 +1,4 @@
 export enum RoutesPaths {
-  App = '/dashboard',
-  SignIn = '/signin',
+  App = '/profiles',
+  SignIn = '/sign-in',
 }

@@ -4,6 +4,11 @@
   height: 100vh;
 }
 
+.profile-page__header {
+  padding-bottom: toRem(24);
+  border-bottom: toRem(1) solid var(--fill-icon-primary);;
+}
+
 .profile-page__wrapper {
   border-radius: toRem(16);
   background: var(--white);
@@ -14,8 +19,8 @@
 }
 
 .profile-page__content-wrapper {
+  margin-top: toRem(24);
   display: flex;
-  margin-top: toRem(40);
   justify-content: space-between;
   flex: 1 1 auto;
 }
@@ -34,7 +39,10 @@
 
 .profile-page__description {
   color: var(--text-icon-secondary, #687281);
-  margin-top: toRem(16);
+  margin-top: toRem(8);
+  font-size: toRem(16);
+  font-weight: 400;
+  line-height: toRem(20);
 }
 
 .profile-page__content {
@@ -57,17 +65,19 @@
 
 .profile-page__content-title {
   color: var(--text-icon-primary);
-  font-size: toRem(20);
-  font-weight: 700;
-  line-height: toRem(24);
+  font-size: toRem(16);
+  font-weight: 500;
+  line-height: toRem(20);
 }
 
 .profile-page__content-empty {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: toRem(100);
-  height: 100%;
+  padding: toRem(140) 0;
+  background: var(--background-secondary-light);
+  border-radius: toRem(8);
+  border: toRem(1) dashed var(--border-primary-light);
 }
 
 .profile-page__content-empty-icon {
@@ -94,9 +104,4 @@
 
 .profile-page__content-empty-button {
   margin-top: toRem(24);
-}
-
-.profile-page__content-actions-wallets, .profile-page__content-actions-filter {
-  display: flex;
-  align-items: center;
 }

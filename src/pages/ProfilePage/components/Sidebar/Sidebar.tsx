@@ -4,7 +4,7 @@ import { PROVIDERS } from '@distributedlab/w3p'
 import { W3CCredential } from '@rarimo/rarime-connector'
 import { FC, HTMLAttributes } from 'react'
 
-import { AppButton, Icon } from '@/common'
+import { Icon } from '@/common'
 import { useWeb3Context } from '@/contexts'
 import { IconNames } from '@/enums'
 
@@ -42,11 +42,6 @@ const Sidebar: FC<Props> = ({ credentials }) => {
             </p>
           </div>
         </div>
-        <AppButton
-          iconLeft={IconNames.ExpandAll}
-          scheme='none'
-          size='x-small'
-        />
       </div>
       <div className='sidebar-content'>
         <div className='sidebar-content__wallet'>
@@ -59,11 +54,6 @@ const Sidebar: FC<Props> = ({ credentials }) => {
               {String(provider?.providerType)}
             </span>
           </div>
-          <AppButton
-            iconLeft={IconNames.ExpandMore}
-            scheme='none'
-            size='x-small'
-          />
         </div>
       </div>
     </div>
