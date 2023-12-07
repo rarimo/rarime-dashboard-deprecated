@@ -2,7 +2,7 @@ configVersion: 1
 project: "web-client"
 ---
 image: builder
-from: registry.gitlab.com/tokend/devops/docker-containers:front16-914ecbd7e2465bc9570bf60322f3951eee7989c9
+from: node:16.20.2-alpine
 git:
   - add: /
     to: /app
