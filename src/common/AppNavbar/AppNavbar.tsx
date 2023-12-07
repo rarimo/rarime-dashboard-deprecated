@@ -18,7 +18,7 @@ const AppNavbar: FC<HTMLAttributes<HTMLDivElement>> = ({
           scheme='none'
           size='none'
           iconLeft={IconNames.AccountBalanceWallet}
-          routePath={RoutesPaths.App}
+          routePath={RoutesPaths.Profiles}
         />
       </div>
     </div>
