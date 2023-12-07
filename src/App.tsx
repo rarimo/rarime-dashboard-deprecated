@@ -26,20 +26,21 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
   }, [width])
 
   const init = async () => {
+    if (provider?.address) return
+
     try {
-      if (provider?.address) return
       if (await checkMetamaskExists()) {
         await initWeb3()
 
         if (await checkSnapExists()) {
           await connectOrInstallSnap()
         }
-
-        setIsAppInitialized(true)
       }
     } catch (error) {
       ErrorHandler.processWithoutFeedback(error)
     }
+
+    setIsAppInitialized(true)
   }
 
   useEffect(() => {
