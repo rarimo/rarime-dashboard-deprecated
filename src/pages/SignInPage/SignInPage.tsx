@@ -18,13 +18,15 @@ const SignInPage = () => {
   const connectWallet = async () => {
     await initWeb3(PROVIDERS.Metamask)
     await connectOrInstallSnap()
+    navigate(RoutesPaths.App)
   }
 
   useEffect(() => {
     if (provider?.isConnected) {
       navigate(RoutesPaths.App)
     }
-  }, [navigate, provider?.isConnected])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigate])
 
   return (
     <div className='sign-in-page'>

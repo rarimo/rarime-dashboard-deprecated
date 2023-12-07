@@ -4,15 +4,11 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-image: url("/imgs/app-background.webp");
+  background-image: url("/imgs/app-bg.png");
   background-repeat: no-repeat;
   background-position: right;
   background-size: 50% / cover;
   backdrop-filter: opacity(0.1);
-
-  &.no-webp {
-    background-image: url("/imgs/app-bg.png");
-  }
 
   &:before {
     content: "";

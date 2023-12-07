@@ -76,10 +76,10 @@ const ProfilePage = () => {
                   name={IconNames.PlusInCircle}
                 />
                 <span className='profile-page__content-empty-title'>
-                  {t('profile-page.title')}
+                  {t('profile-page.empty-title')}
                 </span>
                 <p className='profile-page__content-empty-description'>
-                  {t('profile-page.description')}
+                  {t('profile-page.empty-description')}
                 </p>
                 <AppButton
                   className='profile-page__content-empty-button'
