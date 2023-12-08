@@ -29,7 +29,7 @@ const Sidebar: FC<Props> = ({ credentials }) => {
         <div className='sidebar-header__content'>
           {/*TODO: add dynamic avatar*/}
           <img
-            src='/static/imgs/default-profile-img.png'
+            src='/imgs/default-profile-img.png'
             width={40}
             height={40}
             alt='avatar'
