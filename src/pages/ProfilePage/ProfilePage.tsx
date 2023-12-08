@@ -14,14 +14,23 @@ import { CredentialsTile, Sidebar } from './components'
 
 const ProfilePage = () => {
   const [credentials, setCredentials] = useState([] as W3CCredential[])
-  const { getCredentials } = useMetamaskZkpSnapContext()
+  const { getCredentials, checkSnapExists, connectOrInstallSnap } =
+    useMetamaskZkpSnapContext()
   const { provider } = useWeb3Context()
   const navigate = useNavigate()
   const { t } = useTranslation()
 
   const getUserCredentials = useCallback(async () => {
+    await checkConnectSnap()
     setCredentials(await getCredentials())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getCredentials])
+
+  const checkConnectSnap = useCallback(async () => {
+    if (!(await checkSnapExists())) {
+      await connectOrInstallSnap()
+    }
+  }, [checkSnapExists, connectOrInstallSnap])
 
   useEffect(() => {
     if (!provider?.address) {
