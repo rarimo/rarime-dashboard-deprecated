@@ -25,7 +25,7 @@
   }
 
   &:after {
-    background: url("/imgs/cells-bg.png") no-repeat top center / contain;
+    background: url("/imgs/cells-bg.png") repeat top center / contain;
     content: "";
     pointer-events: none;
     position: fixed;

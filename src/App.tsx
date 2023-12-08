@@ -1,9 +1,11 @@
 import { FC, HTMLAttributes, useEffect, useMemo, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { useWindowSize } from 'react-use'
 
 import { AppNavbar, Loader, MobileDeviceMessage } from '@/common'
 import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
+import { RoutesPaths } from '@/enums'
 import { bus, BUS_EVENTS, ErrorHandler, isMobile } from '@/helpers'
 import { useNotification, useViewportSizes } from '@/hooks'
 
@@ -16,7 +18,7 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
     useMetamaskZkpSnapContext()
   const { showToast } = useNotification()
   const { width } = useWindowSize()
-
+  const { pathname } = useLocation()
   const isDeviceMobile = useMemo(() => {
     if (width <= 1280) {
       return isMobile()
@@ -79,7 +81,9 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
         <MobileDeviceMessage />
       ) : (
         <>
-          {provider?.isConnected && <AppNavbar className='app__navbar' />}
+          {pathname !== RoutesPaths.SignIn && (
+            <AppNavbar className='app__navbar' />
+          )}
           <div className='app__main'>
             {isAppInitialized ? children : <Loader />}
           </div>
