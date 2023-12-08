@@ -35,7 +35,7 @@ export const AppRoutes = () => {
       children: [
         {
           index: true,
-          path: RoutesPaths.App,
+          path: RoutesPaths.Profiles,
           element: <ProfilePage />,
         },
         {

@@ -13,18 +13,24 @@ const SignInPage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
   const { init: initWeb3, provider } = useWeb3Context()
-  const { connectOrInstallSnap } = useMetamaskZkpSnapContext()
+  const { connectOrInstallSnap, checkSnapExists } = useMetamaskZkpSnapContext()
 
   const connectWallet = async () => {
     await initWeb3(PROVIDERS.Metamask)
     await connectOrInstallSnap()
+    navigate(RoutesPaths.Profiles)
+  }
+
+  const redirectToProfiles = async () => {
+    if (provider?.address && (await checkSnapExists())) {
+      navigate(RoutesPaths.Profiles)
+    }
   }
 
   useEffect(() => {
-    if (provider?.isConnected) {
-      navigate(RoutesPaths.App)
-    }
-  }, [navigate, provider?.isConnected])
+    redirectToProfiles()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigate])
 
   return (
     <div className='sign-in-page'>

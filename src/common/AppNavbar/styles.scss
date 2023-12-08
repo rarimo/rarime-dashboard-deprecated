@@ -6,7 +6,8 @@
   gap: toRem(24);
   padding: toRem(24) var(--app-padding-right) toRem(24) var(--app-padding-left);
   border-bottom: var(--border-primary-main);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background: var(--background-secondary-main);
   position: absolute;
   left: 0;
