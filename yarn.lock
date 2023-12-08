@@ -1085,10 +1085,10 @@
     picocolors "^1.0.0"
     tslib "^2.5.0"
 
-"@rarimo/rarime-connector@^1.1.0-rc.0":
-  version "1.1.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@rarimo/rarime-connector/-/rarime-connector-1.1.0-rc.0.tgz#e7374eccc811a68b862a5dc833ab64b45535ef9b"
-  integrity sha512-d5CHbWtpkOOH5MhsJY+qzmtVkTeetc5dhVUPaRT7WKYbmFvcRf2WG/h1DOlRPzQ7UHSdbx7UQCOcLmTw2B+PGw==
+"@rarimo/rarime-connector@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@rarimo/rarime-connector/-/rarime-connector-1.0.2.tgz#966f260e9ccfde53c99900273d6c0421198ea1a8"
+  integrity sha512-783NYW34bYIl7/5k8ggA53ZEo4yUBNhEGU51MAvjRnqiCn6W6x4LUGbZyu14jn3/D47DkOYI3pnOWsZpeFHfGw==
   dependencies:
     "@ethersproject/providers" "5.7.2"
     ethers "5.7.2"
