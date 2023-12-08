@@ -1,7 +1,8 @@
 .profile-page {
   background: var(--background-secondary-main);
   padding: var(--app-primary-page-padding) var(--app-primary-page-padding) var(--app-primary-page-padding) var(--sidebar-full-width);
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .profile-page__header {
