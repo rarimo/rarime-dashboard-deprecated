@@ -85,7 +85,7 @@ export const App: FC<HTMLAttributes<HTMLDivElement>> = ({ children }) => {
             <AppNavbar className='app__navbar' />
           )}
           <div className='app__main'>
-            {isAppInitialized ? children : <Loader />}
+            {isAppInitialized ? children : <Loader className='app__loader' />}
           </div>
           <ToastContainer />
         </>
