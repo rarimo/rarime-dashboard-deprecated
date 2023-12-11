@@ -3,6 +3,7 @@ import './styles.scss'
 import { PROVIDERS } from '@distributedlab/w3p'
 import { W3CCredential } from '@rarimo/rarime-connector'
 import { FC, HTMLAttributes } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Icon } from '@/common'
 import { useWeb3Context } from '@/contexts'
@@ -14,6 +15,8 @@ type Props = {
 
 const Sidebar: FC<Props> = ({ credentials }) => {
   const { provider } = useWeb3Context()
+  const { t } = useTranslation()
+
   const walletIcon = () => {
     switch (provider?.providerType) {
       case PROVIDERS.Metamask:
@@ -38,7 +41,11 @@ const Sidebar: FC<Props> = ({ credentials }) => {
             <p className='sidebar-header__content-text-title'>{'Profile #1'}</p>
             <p className='sidebar-header__content-text-description'>
               {/*TODO: add dynamic proofs*/}
-              {credentials.length + ' Credentials'}
+              {credentials.length +
+                ' ' +
+                (credentials.length > 1
+                  ? t('profile-page.credentials')
+                  : t('profile-page.credential'))}
             </p>
           </div>
         </div>
