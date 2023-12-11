@@ -138,6 +138,10 @@ a {
   animation: fade-in 0.25s reverse;
 }
 
+.app__loader {
+  height: 100vh;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;

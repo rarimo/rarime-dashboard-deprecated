@@ -19,6 +19,10 @@
   flex-direction: column;
 }
 
+.profile-page__content-loader {
+  height: 100%;
+}
+
 .profile-page__content-wrapper {
   margin-top: toRem(24);
   display: flex;

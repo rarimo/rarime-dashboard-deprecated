@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
-import { AppButton, Icon } from '@/common'
+import { AppButton, Icon, Loader } from '@/common'
 import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
 import { IconNames, RoutesPaths } from '@/enums'
 
@@ -14,6 +14,7 @@ import { CredentialsTile, Sidebar } from './components'
 
 const ProfilePage = () => {
   const [credentials, setCredentials] = useState([] as W3CCredential[])
+  const [isCredentialLoad, setIsCredentialLoad] = useState(false)
   const { getCredentials, checkSnapExists, connectOrInstallSnap } =
     useMetamaskZkpSnapContext()
   const { provider } = useWeb3Context()
@@ -21,8 +22,14 @@ const ProfilePage = () => {
   const { t } = useTranslation()
 
   const getUserCredentials = useCallback(async () => {
-    await checkConnectSnap()
-    setCredentials(await getCredentials())
+    try {
+      await checkConnectSnap()
+      setCredentials(await getCredentials())
+    } catch (error) {
+      throw new Error(String(error))
+    } finally {
+      setIsCredentialLoad(true)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getCredentials])
 
@@ -52,29 +59,37 @@ const ProfilePage = () => {
         <div className='profile-page__content-wrapper'>
           <Sidebar credentials={credentials ?? []} />
           <div className='profile-page__content'>
-            {credentials.length ? (
+            {credentials.length || !isCredentialLoad ? (
               <>
-                <div className='profile-page__content-header'>
-                  <h2 className='profile-page__content-title'>
-                    {credentials.length + ' ' + t('profile-page.credential')}
-                  </h2>
-                  <div className='profile-page__content-actions'>
-                    <AppButton
-                      className='profile-page__content-actions-add'
-                      text={'Add'}
-                      scheme='filled'
-                      size='medium'
-                      modification='border-circle'
-                      iconLeft={IconNames.Plus}
-                      routePath={config.ROBOTORNOT_LINK}
-                    />
-                  </div>
-                </div>
-                <div className='profile-page__content-tiles'>
-                  {credentials.map((credential, idx) => (
-                    <CredentialsTile key={idx} credential={credential} />
-                  ))}
-                </div>
+                {isCredentialLoad ? (
+                  <>
+                    <div className='profile-page__content-header'>
+                      <h2 className='profile-page__content-title'>
+                        {credentials.length +
+                          ' ' +
+                          t('profile-page.credential')}
+                      </h2>
+                      <div className='profile-page__content-actions'>
+                        <AppButton
+                          className='profile-page__content-actions-add'
+                          text={'Add'}
+                          scheme='filled'
+                          size='medium'
+                          modification='border-circle'
+                          iconLeft={IconNames.Plus}
+                          routePath={config.ROBOTORNOT_LINK}
+                        />
+                      </div>
+                    </div>
+                    <div className='profile-page__content-tiles'>
+                      {credentials.map((credential, idx) => (
+                        <CredentialsTile key={idx} credential={credential} />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Loader className='profile-page__content-loader' />
+                )}
               </>
             ) : (
               <div className='profile-page__content-empty'>
