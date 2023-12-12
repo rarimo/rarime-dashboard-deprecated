@@ -43,7 +43,7 @@ const Sidebar: FC<Props> = ({ credentials }) => {
               {/*TODO: add dynamic proofs*/}
               {credentials.length +
                 ' ' +
-                (credentials.length > 1
+                (credentials.length !== 1
                   ? t('profile-page.credentials')
                   : t('profile-page.credential'))}
             </p>
