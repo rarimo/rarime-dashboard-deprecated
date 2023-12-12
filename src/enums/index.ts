@@ -1,4 +1,5 @@
-export * from './credential_name.enum'
+export * from './credential-name.enum'
 export * from './icon-names.enum'
+export * from './kyc-providers.enum'
 export * from './routes.enum'
 export * from './window-breakpoints.enum'

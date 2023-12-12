@@ -13,6 +13,13 @@
     "title": "Sign in",
     "description": "Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard"
   },
+  "tiles": {
+    "WorldCoin": "Worldcoin",
+    "Unstoppable": "Unstoppable domains",
+    "GitCoin": "Gitcoin Passport",
+    "Civic": "Civic"
+
+  },
   "mobile-device-message": {
     "title": "Mobile version is not yet available.",
     "description": "Please use a desktop device"
