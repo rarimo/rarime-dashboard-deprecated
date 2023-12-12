@@ -18,6 +18,7 @@ export const config = {
   } as Record<keyof typeof FALLBACK_SUPPORTED_CHAINS, Chain>,
   DEFAULT_CHAIN: import.meta.env.VITE_DEFAULT_CHAIN as SUPPORTED_CHAINS,
   ROBOTORNOT_LINK: import.meta.env.VITE_ROBOTORNOT_LINK,
+  OTHER_BROWSER_METAMASK_LINK: 'https://metamask.io/download/',
   CHROME_METAMASK_ADDON_LINK:
     'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn',
   FIREFOX_METAMASK_ADDON_LINK:

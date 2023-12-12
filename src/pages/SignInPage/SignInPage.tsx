@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom'
 import { AppButton, Icon } from '@/common'
 import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
 import { IconNames, RoutesPaths } from '@/enums'
-// import { bus, BUS_EVENTS } from '@/helpers'
 
 const SignInPage = () => {
   const [isPending, setIsPending] = useState(false)
@@ -55,17 +54,13 @@ const SignInPage = () => {
 
     const currentBrowser = chromeAgent || firefoxAgent || operaAgent || ''
 
-    if (!currentBrowser) return ''
+    if (!currentBrowser) return config.OTHER_BROWSER_METAMASK_LINK
 
     return get(browserExtensionsLinks, currentBrowser, '')
   }, [isMetamaskInstalled])
 
   const openInstallMetamaskLink = useCallback(() => {
-    if (!installMMLink) {
-      // bus.emit(BUS_EVENTS.warning, `Your browser is not support Metamask`)
-
-      return
-    }
+    if (!installMMLink) return
 
     setIsPending(true)
 
