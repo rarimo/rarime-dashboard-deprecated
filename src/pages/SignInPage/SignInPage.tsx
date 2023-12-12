@@ -2,19 +2,24 @@ import './styles.scss'
 
 import { config } from '@config'
 import { PROVIDERS } from '@distributedlab/w3p'
-import { useEffect } from 'react'
+import get from 'lodash/get'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 import { AppButton, Icon } from '@/common'
 import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
 import { IconNames, RoutesPaths } from '@/enums'
+import { bus, BUS_EVENTS } from '@/helpers'
 
 const SignInPage = () => {
+  const [isPending, setIsPending] = useState(false)
+
   const navigate = useNavigate()
   const { t } = useTranslation()
   const { init: initWeb3, provider } = useWeb3Context()
-  const { connectOrInstallSnap, checkSnapExists } = useMetamaskZkpSnapContext()
+  const { connectOrInstallSnap, checkSnapExists, isMetamaskInstalled } =
+    useMetamaskZkpSnapContext()
 
   const connectWallet = async () => {
     await initWeb3(PROVIDERS.Metamask)
@@ -27,6 +32,45 @@ const SignInPage = () => {
       navigate(RoutesPaths.Profiles)
     }
   }
+
+  const installMMLink = useMemo(() => {
+    if (isMetamaskInstalled) return ''
+
+    const browserExtensionsLinks = {
+      chrome: config.CHROME_METAMASK_ADDON_LINK,
+      opera: config.OPERA_METAMASK_ADDON_LINK,
+      firefox: config.FIREFOX_METAMASK_ADDON_LINK,
+    }
+
+    // Get the user-agent string
+    const userAgentString = navigator.userAgent
+
+    let chromeAgent = userAgentString.indexOf('Chrome') > -1 ? 'chrome' : ''
+    const firefoxAgent =
+      userAgentString.indexOf('Firefox') > -1 ? 'firefox' : ''
+    const operaAgent = userAgentString.indexOf('OP') > -1 ? 'opera' : ''
+
+    // Discard Chrome since it also matches Opera
+    if (chromeAgent && operaAgent) chromeAgent = ''
+
+    const currentBrowser = chromeAgent || firefoxAgent || operaAgent || ''
+
+    if (!currentBrowser) return ''
+
+    return get(browserExtensionsLinks, currentBrowser, '')
+  }, [isMetamaskInstalled])
+
+  const openInstallMetamaskLink = useCallback(() => {
+    if (!installMMLink) {
+      bus.emit(BUS_EVENTS.warning, `Your browser is not support Metamask`)
+
+      return
+    }
+
+    setIsPending(true)
+
+    window.open(installMMLink, '_blank', 'noopener noreferrer')
+  }, [installMMLink])
 
   useEffect(() => {
     redirectToProfiles()
@@ -53,13 +97,25 @@ const SignInPage = () => {
         <p className='sign-in-page__description'>
           {t('sign-in-page.description')}
         </p>
-        <AppButton
-          className='sign-in-page__button'
-          iconLeft={IconNames.Metamask}
-          text={'Connect Metamask'}
-          modification='border-circle'
-          onClick={connectWallet}
-        />
+        {isMetamaskInstalled ? (
+          <AppButton
+            className='sign-in-page__button'
+            iconLeft={IconNames.Metamask}
+            text={'Connect Metamask'}
+            modification='border-circle'
+            onClick={connectWallet}
+          />
+        ) : (
+          <AppButton
+            iconLeft={IconNames.Metamask}
+            text={isPending ? `Please, reload page` : `Install metamask`}
+            modification='border-circle'
+            onClick={openInstallMetamaskLink}
+            target='_blank'
+            rel='noopener noreferrer'
+            isDisabled={isPending}
+          />
+        )}
       </div>
     </div>
   )

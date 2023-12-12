@@ -67,7 +67,7 @@ const ProfilePage = () => {
                       <h2 className='profile-page__content-title'>
                         {credentials.length +
                           ' ' +
-                          (credentials.length > 1
+                          (credentials.length !== 1
                             ? t('profile-page.credentials')
                             : t('profile-page.credential'))}
                       </h2>

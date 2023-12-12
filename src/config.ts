@@ -19,7 +19,7 @@ export const config = {
   DEFAULT_CHAIN: import.meta.env.VITE_DEFAULT_CHAIN as SUPPORTED_CHAINS,
   ROBOTORNOT_LINK: import.meta.env.VITE_ROBOTORNOT_LINK,
   CHROME_METAMASK_ADDON_LINK:
-    'https://chrome.google.com/webstore/detail/metamask/',
+    'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn',
   FIREFOX_METAMASK_ADDON_LINK:
     'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/',
   OPERA_METAMASK_ADDON_LINK:

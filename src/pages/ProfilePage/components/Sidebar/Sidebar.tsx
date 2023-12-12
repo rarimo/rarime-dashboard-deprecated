@@ -40,10 +40,9 @@ const Sidebar: FC<Props> = ({ credentials }) => {
           <div className='sidebar-header__content-text'>
             <p className='sidebar-header__content-text-title'>{'Profile #1'}</p>
             <p className='sidebar-header__content-text-description'>
-              {/*TODO: add dynamic proofs*/}
               {credentials.length +
                 ' ' +
-                (credentials.length > 1
+                (credentials.length !== 1
                   ? t('profile-page.credentials')
                   : t('profile-page.credential'))}
             </p>
