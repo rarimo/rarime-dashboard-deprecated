@@ -1,5 +1,6 @@
 import './styles.scss'
 
+import { config } from '@config'
 import { PROVIDERS } from '@distributedlab/w3p'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -8,7 +9,6 @@ import { useNavigate } from 'react-router-dom'
 import { AppButton, Icon } from '@/common'
 import { useMetamaskZkpSnapContext, useWeb3Context } from '@/contexts'
 import { IconNames, RoutesPaths } from '@/enums'
-import {config} from "@config";
 
 const SignInPage = () => {
   const navigate = useNavigate()
@@ -36,7 +36,11 @@ const SignInPage = () => {
   return (
     <div className='sign-in-page'>
       <div className='sign-in-page__logo-wrapper'>
-        <img className='sign-in-page__logo' src='/branding/logo-sign-in.svg' alt={config.APP_NAME} />
+        <img
+          className='sign-in-page__logo'
+          src='/branding/logo-sign-in.svg'
+          alt={config.APP_NAME}
+        />
       </div>
       <div className='sign-in-page__content'>
         <Icon
