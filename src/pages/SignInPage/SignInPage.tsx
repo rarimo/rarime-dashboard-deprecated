@@ -60,11 +60,7 @@ const SignInPage = () => {
   }, [isMetamaskInstalled])
 
   const openInstallMetamaskLink = useCallback(() => {
-    if (!installMMLink) {
-      // bus.emit(BUS_EVENTS.warning, `Your browser is not support Metamask`)
-
-      return
-    }
+    if (!installMMLink) return
 
     setIsPending(true)
 
