@@ -4,13 +4,21 @@
     "description": "Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard",
     "wallet": "Wallet",
     "filter": "Filter",
-    "credential": "credential",
+    "credential": "Сredential",
+    "credentials": "Сredentials",
     "empty-title": "Add Credentials",
     "empty-description": "Explore credentials marketplace with different providers "
   },
   "sign-in-page": {
     "title": "Sign in",
     "description": "Manage your identity credentials and Soulbound Tokens (SBTs) easily from this dashboard"
+  },
+  "tiles": {
+    "WorldCoin": "Worldcoin",
+    "Unstoppable": "Unstoppable domains",
+    "GitCoin": "Gitcoin Passport",
+    "Civic": "Civic"
+
   },
   "mobile-device-message": {
     "title": "Mobile version is not yet available.",

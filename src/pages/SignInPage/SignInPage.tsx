@@ -1,5 +1,6 @@
 import './styles.scss'
 
+import { config } from '@config'
 import { PROVIDERS } from '@distributedlab/w3p'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -34,6 +35,13 @@ const SignInPage = () => {
 
   return (
     <div className='sign-in-page'>
+      <div className='sign-in-page__logo-wrapper'>
+        <img
+          className='sign-in-page__logo'
+          src='/branding/logo-sign-in.svg'
+          alt={config.APP_NAME}
+        />
+      </div>
       <div className='sign-in-page__content'>
         <Icon
           width={88}

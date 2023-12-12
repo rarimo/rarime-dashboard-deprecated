@@ -67,7 +67,9 @@ const ProfilePage = () => {
                       <h2 className='profile-page__content-title'>
                         {credentials.length +
                           ' ' +
-                          t('profile-page.credential')}
+                          (credentials.length > 1
+                            ? t('profile-page.credentials')
+                            : t('profile-page.credential'))}
                       </h2>
                       <div className='profile-page__content-actions'>
                         <AppButton

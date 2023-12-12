@@ -1,10 +1,11 @@
 import './styles.scss'
 
 import { W3CCredential } from '@rarimo/rarime-connector'
-import { FC, HTMLAttributes } from 'react'
+import { FC, HTMLAttributes, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { Icon } from '@/common'
-import { CredentialsNames, IconNames } from '@/enums'
+import { CredentialsNames, IconNames, SupportedKycProvider } from '@/enums'
 import { CredentialsNamesType, IconNamesType } from '@/types'
 
 type Props = {
@@ -12,6 +13,26 @@ type Props = {
 } & HTMLAttributes<HTMLDivElement>
 
 const CredentialsTile: FC<Props> = ({ credential }) => {
+  const { t } = useTranslation()
+
+  const detectProviderFromVC = useCallback(
+    (VC?: W3CCredential) => {
+      const currentVC = VC ?? credential
+
+      if (!currentVC?.credentialSubject?.provider) return
+
+      const provider = currentVC.credentialSubject.provider as string
+
+      return {
+        Civic: SupportedKycProvider.CIVIC,
+        GitcoinPassport: SupportedKycProvider.GITCOIN,
+        UnstoppableDomains: SupportedKycProvider.UNSTOPPABLEDOMAINS,
+        Worldcoin: SupportedKycProvider.WORLDCOIN,
+      }[provider]
+    },
+    [credential],
+  )
+
   return (
     <div className='credential-tile'>
       <div className='credential-tile__content'>
@@ -46,14 +67,10 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
             width={16}
             height={16}
             className='credential-tile__footer-provider-icon'
-            name={
-              IconNames[
-                String(credential.credentialSubject.provider) as IconNamesType
-              ]
-            }
+            name={IconNames[detectProviderFromVC(credential) as IconNamesType]}
           />
           <p className='credential-tile__footer-provider-name'>
-            {String(credential.credentialSubject.provider)}
+            {t(`tiles.${detectProviderFromVC(credential)}`)}
           </p>
         </div>
       </div>

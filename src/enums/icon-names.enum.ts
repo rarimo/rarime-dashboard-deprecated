@@ -103,7 +103,7 @@ export enum IconNames {
   X = 'x',
 
   Civic = 'civic',
-  GitCoin = 'gitcoin',
-  Unstoppable = 'unstoppable',
+  GitCoin = 'gitcoin-passport',
+  Unstoppable = 'unstoppable-domains',
   WorldCoin = 'worldcoin',
 }
