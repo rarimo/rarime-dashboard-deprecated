@@ -73,3 +73,9 @@
   line-height: toRem(20);
   max-width: toRem(420);
 }
+
+.sign-in-page__logo-wrapper {
+  position: absolute;
+  top: toRem(25);
+  left: toRem(65);
+}
