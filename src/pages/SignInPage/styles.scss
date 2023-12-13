@@ -4,11 +4,6 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-image: url("/imgs/app-bg.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 50% / cover;
-  backdrop-filter: opacity(0.1);
 
   &:before {
     content: "";
@@ -19,13 +14,13 @@
     width: 100%;
     height: 100%;
     background: var(--background-secondary-main);
-    opacity: 0.25;
     filter: blur(#{toRem(2)});
+    opacity: 0.8;
     z-index: var(--z-index-hidden);
   }
 
   &:after {
-    background: url("/imgs/cells-bg.png") repeat top center / contain;
+    background: url("/imgs/cells-bg.png") repeat top center;
     content: "";
     pointer-events: none;
     position: fixed;
@@ -34,11 +29,38 @@
     width: 100%;
     height: 100%;
     z-index: var(--z-index-hidden);
+    opacity: 0.7;
   }
 
   @include respond-to(small) {
     background-position: center center;
     background-size: cover;
+  }
+}
+
+.sign-in-page__backdrop {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("/imgs/app-bg.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  backdrop-filter: blur(toRem(118));
+  z-index: var(--z-index-hidden);
+  opacity: 0.5;
+
+  &:before {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    opacity: 0.6;
+    z-index: var(--z-index-hidden);
   }
 }
 
@@ -76,6 +98,6 @@
 
 .sign-in-page__logo-wrapper {
   position: absolute;
-  top: toRem(25);
+  top: toRem(38);
   left: toRem(65);
 }
