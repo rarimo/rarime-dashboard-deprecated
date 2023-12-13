@@ -21,7 +21,6 @@
 .app-navbar__logo {
   margin-right: auto;
   max-width: toRem(56);
-  margin-top: toRem(24);
   margin-bottom: toRem(48);
 
   @include respond-to(xsmall) {
