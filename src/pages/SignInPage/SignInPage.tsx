@@ -74,6 +74,7 @@ const SignInPage = () => {
 
   return (
     <div className='sign-in-page'>
+      <div className='sign-in-page__backdrop' />
       <div className='sign-in-page__logo-wrapper'>
         <img
           className='sign-in-page__logo'
