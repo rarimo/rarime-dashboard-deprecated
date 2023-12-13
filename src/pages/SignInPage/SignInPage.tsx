@@ -104,6 +104,7 @@ const SignInPage = () => {
         ) : (
           <AppButton
             iconLeft={IconNames.Metamask}
+            className='sign-in-page__button'
             text={isPending ? `Please, reload page` : `Install metamask`}
             modification='border-circle'
             onClick={openInstallMetamaskLink}
