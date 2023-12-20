@@ -28,6 +28,7 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
         GitcoinPassport: SupportedKycProvider.GITCOIN,
         UnstoppableDomains: SupportedKycProvider.UNSTOPPABLEDOMAINS,
         Worldcoin: SupportedKycProvider.WORLDCOIN,
+        Kleros: SupportedKycProvider.KLEROS,
       }[provider]
     },
     [credential],
