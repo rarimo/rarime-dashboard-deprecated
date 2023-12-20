@@ -17,8 +17,8 @@
     "WorldCoin": "Worldcoin",
     "Unstoppable": "Unstoppable Domains",
     "GitCoin": "Gitcoin Passport",
-    "Civic": "Civic"
-
+    "Civic": "Civic",
+    "Unknown": "Unknown"
   },
   "mobile-device-message": {
     "title": "Mobile version is not yet available.",

@@ -67,10 +67,13 @@ const CredentialsTile: FC<Props> = ({ credential }) => {
             width={16}
             height={16}
             className='credential-tile__footer-provider-icon'
-            name={IconNames[detectProviderFromVC(credential) as IconNamesType]}
+            name={
+              IconNames[detectProviderFromVC(credential) as IconNamesType] ??
+              IconNames.Proof
+            }
           />
           <p className='credential-tile__footer-provider-name'>
-            {t(`tiles.${detectProviderFromVC(credential)}`)}
+            {t(`tiles.${detectProviderFromVC(credential) ?? 'Unknown'}`)}
           </p>
         </div>
       </div>
