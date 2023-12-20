@@ -106,4 +106,5 @@ export enum IconNames {
   GitCoin = 'gitcoin-passport',
   Unstoppable = 'unstoppable-domains',
   WorldCoin = 'worldcoin',
+  Kleros = 'kleros',
 }

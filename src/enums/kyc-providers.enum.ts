@@ -3,4 +3,5 @@ export enum SupportedKycProvider {
   GITCOIN = 'GitCoin',
   UNSTOPPABLEDOMAINS = 'Unstoppable',
   WORLDCOIN = 'WorldCoin',
+  KLEROS = 'Kleros',
 }

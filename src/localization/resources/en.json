@@ -17,7 +17,9 @@
     "WorldCoin": "Worldcoin",
     "Unstoppable": "Unstoppable Domains",
     "GitCoin": "Gitcoin Passport",
-    "Civic": "Civic"
+    "Civic": "Civic",
+    "Kleros": "Kleros",
+    "Unknown": "Unknown"
 
   },
   "mobile-device-message": {
