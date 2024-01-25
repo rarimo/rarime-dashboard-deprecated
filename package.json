@@ -31,7 +31,7 @@
   "dependencies": {
     "@distributedlab/tools": "^1.0.0-rc.8",
     "@distributedlab/w3p": "^1.0.0-rc.8",
-    "@rarimo/rarime-connector": "2.0.0-rc.0",
+    "@rarimo/rarime-connector": "2.0.1",
     "@walletconnect/modal": "^2.6.2",
     "downshift": "^7.1.2",
     "framer-motion": "^10.12.10",
