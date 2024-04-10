@@ -1071,10 +1071,10 @@
     "@parcel/watcher-win32-ia32" "2.4.0"
     "@parcel/watcher-win32-x64" "2.4.0"
 
-"@rarimo/rarime-connector@2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@rarimo/rarime-connector/-/rarime-connector-2.0.3.tgz#c8d2893eaac23c64754e5b5ad8e513bda913cd18"
-  integrity sha512-OM9SClnYvhacOpYg3KPz5D7pJi2WfC9EqQeFlgr9UhRh0RYuPF+RDE1LINT/SstiumQ8utc8b9qliTXmFpRfwQ==
+"@rarimo/rarime-connector@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@rarimo/rarime-connector/-/rarime-connector-2.1.0.tgz#2054cef70d6b342e95c800398b414a0599af1005"
+  integrity sha512-mHSVZ/qj/pCN2YjsapP1NKcOjfiokEP1NaFMrrT6FIoaiGaAw8TpQFBemXrKOsXdY8glnadvolaJr2rO28n9AA==
   dependencies:
     "@ethersproject/providers" "5.7.2"
     compare-versions "^6.1.0"
