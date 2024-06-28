@@ -46,4 +46,4 @@ jobs:
           mkdir ~/.kube/
           echo "${{ secrets.K8SCONFIG_PROD }}" | base64 -d > config
           mv config ~/.kube/
-          kubectl set image deployment rarime-dashboard template=ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA -n robotornot
+          kubectl set image deployment rarime-dashboard template=ghcr.io/$GITHUB_REPOSITORY:$GITHUB_REF_NAME -n robotornot
